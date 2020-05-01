@@ -69,7 +69,7 @@ the names are a bit different but the functions and parameters stay the same
 `void fog_renderer_turn_on_camera(u32 camera_id)`.
 
 Do note that particle systems, which used to be classes, now need to be passed
-as the first parameter to its methods. `void ParticleSystem::spawn(u32
+as the first parameter to their methods. `void ParticleSystem::spawn(u32
 num_particles=1)` becomes `void fog_renderer_particle_spawn(ParticleSystem
 *system, u32 num_particles)` and so on.
 
