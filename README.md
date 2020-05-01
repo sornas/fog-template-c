@@ -46,10 +46,9 @@ available.
    download") to create your own repository with the same directories and files
    as this repository.
 2. Clone the repository to your local machine and `cd` into it.
-3. Clone the fog submodule.
+3. Add fog as a submodule.
 ```shell
-$ git submodule init
-$ git submodule update
+$ git submodule add https://github.com/FredTheDino/Fog.git fog
 ```
 4. Compile and run.
 ```shell
@@ -58,6 +57,11 @@ $ make run
 
 The repo contains a very basic example which shows how to create some keybinds,
 render a point on the screen and start a main-loop.
+
+You don't *have* to add fog as a submodule. However, if you need to fix the
+engine during development (or have someone else implement a fix) it's easier to
+track and share these changes. Unfortunately Github doesn't add submodules when
+creating a copy of a template repository.
 
 ## Stuff to keep in mind
 
