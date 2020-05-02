@@ -114,8 +114,11 @@ distributable .zip-file.
 
 ```shell
 $ zip -r game.zip data.fog <executable>  # targeting linux
-$ zip -r game.zip data.fog <executable.exe> fog/lib/windows/SDL2.dll fog/lib/windows/winpthreads/libwinpthread-1.dll  # targeting windows
+$ zip -rj game.zip data.fog <executable.exe> fog/lib/windows/SDL2.dll fog/lib/windows/winpthreads/libwinpthread-1.dll  # targeting windows
 ```
+
+The `j`-flag discards the directory structure since the `dll`-files need to be
+in the same directory as the executable.
 
 ## Licensing of code
 
