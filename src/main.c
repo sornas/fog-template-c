@@ -52,6 +52,8 @@ int main(int argc, char **argv) {
 
     sound_id = fog_asset_fetch_id("NOISE_SHORT");
 
+    fog_mixer_channel_set_delay(0, 0.3, 0.2, 0);
+
     player = (struct Player) {
         fog_V2(0, 0),
         2.0f,
