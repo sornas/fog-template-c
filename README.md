@@ -12,7 +12,7 @@ available.
 
 | OS      | Compiler                      | Target      |
 | ------- | ----------------------------- | ----------- |
-| Linux   | gcc                           | Linux       |
+| Linux   | gcc (9.3.0)                   | Linux       |
 | Linux   | x86\_64-w64-mingw32-gcc       | Windows [1] |
 | Windows | gcc (mingw)                   | Windows     |
 | macOS   | built-in (clang-1001.0.46.4)  | macOS       |
