@@ -71,7 +71,7 @@ A few examples (interactive, if you will) are included as branches in this
 template. You can either choose "Include all branches" when copying the template
 or take a look at them from here. Currently, the following examples exist:
 
-- [Callbacks](/sornas/template-c/tree/callback)
+- [Callbacks](https://github.com/sornas/fog-template-c/tree/callback)
 
 The examples in the documentation exist as well, these are here in order to have
 something accessible and easy to play around with.
