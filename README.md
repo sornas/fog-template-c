@@ -7,19 +7,21 @@ This is a template repository for creating games with
 The following combinations have been tested at least once and should "just work":tm:.
 
 Note that there shouldn't be anything stopping you from using something like
-MSVC or *BSD (if you can get SDL2 running) since you have the entire source
+MSVC or \*BSD (if you can get SDL2 running) since you have the entire source
 available.
 
-| OS      | Compiler                     | Target      |
-| ------- | ---------------------------- | ----------- |
-| Linux   | gcc                          | Linux       |
-| Linux   | x86_64-w64-mingw32-gcc       | Windows [1] |
-| Windows | gcc (mingw)                  | Windows     |
-| macOS   | built-in (clang-1001.0.46.4) | macOS       |
+| OS      | Compiler                      | Target      |
+| ------- | ----------------------------- | ----------- |
+| Linux   | gcc                           | Linux       |
+| Linux   | x86\_64-w64-mingw32-gcc       | Windows [1] |
+| Windows | gcc (mingw)                   | Windows     |
+| macOS   | built-in (clang-1001.0.46.4)  | macOS       |
 
 \[1]: MinGW is not required to run a Windows-executable compiled on Linux.
 
 # Prerequisites
+
+- Python 3 (3.3 and lower not supported)
 
 ## Linux and Mac
 
@@ -65,12 +67,12 @@ creating a copy of a template repository.
 
 ## Stuff to keep in mind
 
-The built-in engine documentation (`make -C fog doc && xdg-open
-fog/tools/doc.html`) is still available (also [hosted
-externally](https://fog.xn--srns-noa9h.se)). Since C doesn't contain namespaces
-the names are a bit different but the functions and parameters stay the same
-(mostly). For example, `void Renderer::turn_on_camera(u32 camera_id=0)` becomes
-`void fog_renderer_turn_on_camera(u32 camera_id)`.
+The built-in engine documentation (`fog/tools/doc.html`) is still
+available (also [hosted externally](https://fog.xn--srns-noa9h.se)). Since C
+doesn't contain namespaces the names are a bit different but the functions and
+parameters stay the same (mostly). For example, `void
+Renderer::turn_on_camera(u32 camera_id=0)` becomes `void
+fog_renderer_turn_on_camera(u32 camera_id)`.
 
 Do note that particle systems, which used to be classes, now need to be passed
 as the first parameter to their methods. `void ParticleSystem::spawn(u32
