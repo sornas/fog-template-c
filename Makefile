@@ -36,6 +36,7 @@ endif
 ifeq ($(ARCH),Darwi)
 	LIBS += -lc++
 endif
+
 INCLUDES = -I$(INC_DIR)
 
 ASSET_BUILDER = $(FOG_DIR)/out/mist
