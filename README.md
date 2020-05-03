@@ -65,6 +65,17 @@ engine during development (or have someone else implement a fix) it's easier to
 track and share these changes. Unfortunately Github doesn't add submodules when
 creating a copy of a template repository.
 
+## Examples
+
+A few examples (interactive, if you will) are included as branches in this
+template. You can either choose "Include all branches" when copying the template
+or take a look at them from here. Currently, the following examples exist:
+
+- Callbacks
+
+The examples in the documentation exist as well, these are here in order to have
+something accessible and easy to play around with.
+
 ## Stuff to keep in mind
 
 The built-in engine documentation (`fog/tools/doc.html`) is still
