@@ -10,6 +10,9 @@ struct Player {
 
 struct Player player;
 
+AssetID sound_id;
+b8 playing = 0;
+
 void update() {
     f32 delta = fog_logic_delta();
 
@@ -21,6 +24,10 @@ void update() {
         player.position = fog_add_v2(player.position, fog_V2(-player.speed*delta, 0));
     if (fog_input_down(NAME(RIGHT), P1))
         player.position = fog_add_v2(player.position, fog_V2(+player.speed*delta, 0));
+
+    if (fog_input_pressed(NAME(PLAY), P1)) {
+        fog_mixer_play_sound(0, sound_id, 1.0, 0.2, 0.01, 0.01, 0);
+    }
 }
 
 void draw() {
@@ -40,6 +47,10 @@ int main(int argc, char **argv) {
     fog_input_add(fog_key_to_input_code(SDLK_s), NAME(DOWN), P1);
     fog_input_add(fog_key_to_input_code(SDLK_a), NAME(LEFT), P1);
     fog_input_add(fog_key_to_input_code(SDLK_d), NAME(RIGHT), P1);
+
+    fog_input_add(fog_key_to_input_code(SDLK_SPACE), NAME(PLAY), P1);
+
+    sound_id = fog_asset_fetch_id("NOISE_SHORT");
 
     player = (struct Player) {
         fog_V2(0, 0),
