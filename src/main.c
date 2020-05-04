@@ -19,7 +19,7 @@ b8 playing = 0;
 void new_sound() {
     AudioID id = fog_mixer_play_sound(0, sound_id, 1.0,
             AUDIO_DEFAULT_GAIN, AUDIO_DEFAULT_VARIANCE, AUDIO_DEFAULT_VARIANCE, 0);
-    fog_mixer_attach_post_sound_hook(id, new_sound);
+    fog_mixer_post_sound_hook(id, new_sound);
 }
 
 void update() {
