@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #define FOG_IMPL
 #include "fog.h"
 
@@ -14,6 +16,12 @@ struct Player player;
 AssetID sound_id;
 b8 playing = 0;
 
+void new_sound() {
+    AudioID id = fog_mixer_play_sound(0, sound_id, 1.0,
+            AUDIO_DEFAULT_GAIN, AUDIO_DEFAULT_VARIANCE, AUDIO_DEFAULT_VARIANCE, 0);
+    fog_mixer_attach_post_sound_hook(id, new_sound);
+}
+
 void update() {
     f32 delta = fog_logic_delta();
 
@@ -27,8 +35,7 @@ void update() {
         player.position = fog_add_v2(player.position, fog_V2(+player.speed*delta, 0));
 
     if (fog_input_pressed(NAME(PLAY), P1)) {
-        fog_mixer_play_sound(0, sound_id, 1.0,
-                AUDIO_DEFAULT_GAIN, AUDIO_DEFAULT_VARIANCE, AUDIO_DEFAULT_VARIANCE, 0);
+        new_sound();
     }
 }
 
