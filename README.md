@@ -72,6 +72,7 @@ template. You can either choose "Include all branches" when copying the template
 or take a look at them from here. Currently, the following examples exist:
 
 - [Callbacks](https://github.com/sornas/fog-template-c/tree/callback)
+- [Audio](https://github.com/sornas/fog-template-c/tree/audio)
 
 The examples in the documentation exist as well, these are here in order to have
 something accessible and easy to play around with.
