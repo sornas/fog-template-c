@@ -1,5 +1,6 @@
 #include <stddef.h>
 
+#define FOG_IMPL
 #include "fog.h"
 
 #include "main.h"
@@ -63,7 +64,7 @@ int main(int argc, char **argv) {
             PRE_UPDATE,   // when in the loop
             inc_runtime,  // what to do
             0,            // when to start (immediately)
-            -1,           // when to stop  (never)
+            FOREVER,      // when to stop
             0.0,          // spacing       (none)
             NULL
     );
@@ -72,7 +73,7 @@ int main(int argc, char **argv) {
             PRE_UPDATE,   // when in the loop
             inc_seconds,  // what to do
             0,            // when to start (immediately)
-            -1,           // when to stop  (never)
+            FOREVER,      // when to stop
             1.0,          // spacing       (1 second)
             NULL
     );
