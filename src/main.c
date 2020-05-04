@@ -25,6 +25,18 @@ void update() {
 
 void draw() {
     fog_renderer_push_point(1, player.position, fog_V4(1, 0, 0, 1), 0.1);
+    fog_renderer_push_point(1,
+            fog_add_v2(
+                player.position,
+                fog_V2(fog_input_value(NAME(LEFTRIGHT), P1),
+                       fog_input_value(NAME(UPDOWN), P1))),
+            fog_V4(0, 0, 1, 1), 0.05);
+    fog_renderer_push_point(1,
+            fog_add_v2(
+                player.position,
+                fog_V2(fog_input_value(NAME(LEFTRIGHT), P2),
+                       fog_input_value(NAME(UPDOWN), P2))),
+            fog_V4(0, 1, 0, 1), 0.05);
 }
 
 int main(int argc, char **argv) {
@@ -40,6 +52,12 @@ int main(int argc, char **argv) {
     fog_input_add(fog_key_to_input_code(SDLK_s), NAME(DOWN), P1);
     fog_input_add(fog_key_to_input_code(SDLK_a), NAME(LEFT), P1);
     fog_input_add(fog_key_to_input_code(SDLK_d), NAME(RIGHT), P1);
+
+    fog_input_add(fog_axis_to_input_code(SDL_CONTROLLER_AXIS_LEFTY, 0), NAME(UPDOWN), P1);
+    fog_input_add(fog_axis_to_input_code(SDL_CONTROLLER_AXIS_LEFTX, 0), NAME(LEFTRIGHT), P1);
+
+    fog_input_add(fog_axis_to_input_code(SDL_CONTROLLER_AXIS_RIGHTY, 0), NAME(UPDOWN), P2);
+    fog_input_add(fog_axis_to_input_code(SDL_CONTROLLER_AXIS_RIGHTX, 0), NAME(LEFTRIGHT), P2);
 
     player = (struct Player) {
         fog_V2(0, 0),

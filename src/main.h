@@ -3,8 +3,10 @@
 typedef enum {
     UP,
     DOWN,
+    UPDOWN,
     LEFT,
     RIGHT,
+    LEFTRIGHT,
     NUM_BINDINGS
 } Binding;
 Name bindings[NUM_BINDINGS];
