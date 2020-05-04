@@ -73,6 +73,7 @@ or take a look at them from here. Currently, the following examples exist:
 
 - [Callbacks](https://github.com/sornas/fog-template-c/tree/callback)
 - [Audio](https://github.com/sornas/fog-template-c/tree/audio)
+- [Audio callbacks](https://github.com/sornas/fog-template-c/tree/audio-callbacks)
 - [Input](https://github.com/sornas/fog-template-c/tree/input)
 
 The examples in the documentation exist as well, these are here in order to have
